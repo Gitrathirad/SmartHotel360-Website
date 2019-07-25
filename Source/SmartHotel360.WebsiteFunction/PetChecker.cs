@@ -46,7 +46,7 @@ namespace PetCheckerFunction
                         
                         var res = await httpClient.GetAsync(url);
                         var stream = await res.Content.ReadAsStreamAsync() as Stream;
-                        log.Info($"--- Image succesfully downloaded from storage");
+                        log.Info($"--- Image succesfully downloaded from storage 1");
                         var (allowed, message, tags) = await PassesImageModerationAsync(stream, log);
                         log.Info($"--- Image analyzed. It was {(allowed ? string.Empty : "NOT")} approved");
                         doc.IsApproved = allowed;
